@@ -1,6 +1,5 @@
 import { FaStar } from "react-icons/fa";
 import type { Itechnology } from "../../types/technology";
-
 interface ITechnologyCardProps {
   technology: Itechnology;
   isSelected: boolean;
