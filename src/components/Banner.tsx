@@ -17,10 +17,10 @@ const Banner = () => {
         </p>
 
         <div className="mt-8 flex flex-wrap justify-center gap-4 md:justify-start">
-          
+          <a
             href="#technologies"
             className="brand-gradient-bg btn border-none px-6 text-white"
-          <a>
+          >
             Explore Technologies
           </a>
           <button className="btn btn-outline px-6">Learn More</button>

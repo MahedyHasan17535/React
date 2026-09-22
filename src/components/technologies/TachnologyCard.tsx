@@ -1,5 +1,6 @@
 import { FaStar } from "react-icons/fa";
 import type { Itechnology } from "../../types/technology";
+
 interface ITechnologyCardProps {
   technology: Itechnology;
   isSelected: boolean;
@@ -12,7 +13,11 @@ const TechnologyCard = ({
   onAddToStack,
 }: ITechnologyCardProps) => {
   return (
-    <div className="flex flex-col rounded-2xl border border-base-300 bg-base-100 p-5 shadow-sm transition-shadow hover:shadow-md">
+    <div
+      className={`flex flex-col rounded-2xl border bg-base-100 p-5 shadow-sm transition-shadow hover:shadow-md ${
+        isSelected ? "border-2 border-[var(--brand-accent)]" : "border border-base-300"
+      }`}
+    >
       <div className="mb-4 flex items-start justify-between">
         <img src={technology.icon} alt={technology.name} className="h-9 w-9" />
         <span className="badge badge-ghost badge-sm">{technology.badge}</span>
@@ -37,8 +42,10 @@ const TechnologyCard = ({
       <button
         onClick={() => onAddToStack(technology)}
         disabled={isSelected}
-        className={`btn mt-5 w-full rounded-xl ${
-          isSelected ? "btn-disabled" : "btn-neutral"
+        className={`btn mt-5 w-full rounded-xl border ${
+          isSelected
+            ? "border-[var(--brand-accent)] bg-transparent text-[var(--brand-accent)] hover:bg-transparent"
+            : "btn-neutral border-transparent"
         }`}
       >
         {isSelected ? "✓ Added to Stack" : "Add to Stack"}
